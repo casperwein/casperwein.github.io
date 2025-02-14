@@ -79,12 +79,13 @@ document.addEventListener("DOMContentLoaded", function () {
         let love = document.createElement("div");
         love.classList.add("love");
         love.innerHTML = "❤️";
+        love.fontSize = "50px";
         love.style.left = `${e.clientX}px`;
         love.style.top = `${e.clientY}px`;
         document.body.appendChild(love);
 
         setTimeout(() => {
             love.remove();
-        }, 2000);
+        }, 3000);
     });
 });
