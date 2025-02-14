@@ -75,16 +75,61 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // 🌸 Animasi Love Floating
-    document.addEventListener("click", function (e) {
+    let clickCount = 1; // Awalnya 1, semakin diklik semakin banyak
+
+document.addEventListener("click", function (e) {
+    for (let i = 0; i < clickCount; i++) { // Jumlah love bertambah setiap klik
         let love = document.createElement("div");
         love.classList.add("love");
         love.innerHTML = "❤️";
-        love.style.left = `${e.clientX}px`;
-        love.style.top = `${e.clientY}px`;
+        
+        // Perbesar ukuran love
+        love.style.fontSize = "30px"; // Bisa diubah sesuai keinginan
+        love.style.position = "absolute";
+
+        // Randomize posisi agar muncul tersebar
+        let offsetX = (Math.random() - 0.5) * 100; // Jarak random ke kiri/kanan
+        let offsetY = (Math.random() - 0.5) * 100; // Jarak random ke atas/bawah
+
+        love.style.left = `${e.clientX + offsetX}px`;
+        love.style.top = `${e.clientY + offsetY}px`;
+        love.style.transform = `scale(${Math.random() * 1.5 + 0.5})`; // Ukuran random
+
         document.body.appendChild(love);
 
         setTimeout(() => {
             love.remove();
         }, 2000);
-    });
+    }
+
+    clickCount++; // Setiap klik, jumlah love yang muncul bertambah
+});let clickCount = 1; // Awalnya 1, semakin diklik semakin banyak
+
+document.addEventListener("click", function (e) {
+    for (let i = 0; i < clickCount; i++) { // Jumlah love bertambah setiap klik
+        let love = document.createElement("div");
+        love.classList.add("love");
+        love.innerHTML = "❤️";
+        
+        // Perbesar ukuran love
+        love.style.fontSize = "30px"; // Bisa diubah sesuai keinginan
+        love.style.position = "absolute";
+
+        // Randomize posisi agar muncul tersebar
+        let offsetX = (Math.random() - 0.5) * 100; // Jarak random ke kiri/kanan
+        let offsetY = (Math.random() - 0.5) * 100; // Jarak random ke atas/bawah
+
+        love.style.left = `${e.clientX + offsetX}px`;
+        love.style.top = `${e.clientY + offsetY}px`;
+        love.style.transform = `scale(${Math.random() * 1.5 + 0.5})`; // Ukuran random
+
+        document.body.appendChild(love);
+
+        setTimeout(() => {
+            love.remove();
+        }, 2000);
+    }
+
+    clickCount++; // Setiap klik, jumlah love yang muncul bertambah
+});
 });
