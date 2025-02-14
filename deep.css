@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #ffd1dc;
+    color: #333;
+    text-align: center;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* 🌸 Welcome Section */
+.welcome {
+    font-size: 24px;
+    font-weight: bold;
+    position: relative;
+}
+
+.welcome .heart-animation {
+    font-size: 48px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* 📸 Swipe Gallery */
+.gallery-section {
+    background-color: #fff0f6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.gallery {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.photo-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.photo-container img {
+    width: 100%;
+    min-width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    height: 300px;
+}
+
+/* 💑 Love Story Section */
+.love-story {
+    background-color: #ffe6e9;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.love-story p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+
+/* 🎀 Ending Section */
+.thankyou {
+    background-color: #ffccd5;
+    padding: 40px;
+    border-radius: 10px;
+    font-size: 18px;
+    padding-bottom: 50px;
+}
+
+.ftr{
+    padding: 10px;
+    background-color: #ffccd5;
+}
+
+/* ❤️ Love Floating Animation */
+.love {
+    position: absolute;
+    font-size: 24px;
+    animation: floatLove 2s ease-out;
+}
+
+
+/* wishes */
+/* 🌸 Wishes Section */
+.wishes {
+    background-color: #fff0f6;
+    padding: 40px 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.wishes h2 {
+    font-size: 28px;
+    color: #e91e63;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.wishes-content p {
+    font-size: 18px;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    animation: slideUp 1.5s ease-in-out;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    animation: float 3s ease-in-out infinite;
+}
+
+.icons span {
+    font-size: 24px;
+    animation: bounce 2s infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+
+.love-icon {
+    position: absolute;
+    font-size: 24px;
+    animation: floatUp 2s ease-out forwards;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes floatLove {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-100px) scale(0.5); opacity: 0; }
+}
+
+
+/* type */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.welcome h2 {
+    font-family: monospace;
+    font-size: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid black; /* Cursor */
+    width: 0;
+    animation: typing 3s steps(30) forwards, blink 0.6s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .welcome h1 {
+        font-size: 28px;
+    }
+
+    .welcome p {
+        font-size: 18px;
+    }
+
+    .photo-container img {
+        height: 200px;
+    }
+
+    .love-story p {
+        font-size: 16px;
+    }
+
+    .message p {
+        font-size: 18px;
+    }
+}
