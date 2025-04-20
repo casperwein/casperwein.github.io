@@ -25,11 +25,11 @@ function toggleMusic() {
 
     if (player.isMuted()) {
         player.unMute();
-        btn.innerText = '⏯️'; 
+        btn.innerText = '🎵'; 
         btn.classList.add('playing'); 
     } else {
         player.mute();
-        btn.innerText = '⏯️'; 
+        btn.innerText = '🎵'; 
         btn.classList.remove('playing'); 
     }
 }
