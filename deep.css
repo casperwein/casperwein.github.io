@@ -155,6 +155,30 @@ section {
     animation: floatUp 2s ease-out forwards;
 }
 
+#musicControl {
+            background-color: #ff6b8b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+}
+
+#musicControl:hover {
+            background-color: #ff4757;
+            transform: scale(1.05);
+}
+
+#musicInfo {
+            font-style: italic;
+            margin-top: 5px;
+            font-size: 14px;
+            color: #888;
+}
+
 /* Animations */
 @keyframes fadeIn {
     0% { opacity: 0; }
