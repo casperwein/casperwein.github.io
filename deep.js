@@ -89,26 +89,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 3000);
     });
 
-    function toggleMusic() {
-            const iframe = document.getElementById('backgroundMusic');
-            const button = document.getElementById('musicControl');
-            
-            // Toggle between mute and unmute (since autoplay only works with mute in most browsers)
-            if (iframe.src.includes("mute=1")) {
-                iframe.src = iframe.src.replace("mute=1", "mute=0");
-                button.textContent = "🔊 Pause Music";
-            } else {
-                iframe.src = iframe.src.replace("mute=0", "mute=1");
-                button.textContent = "🔇 Play Music";
+    
+    let player;
+
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        videoId: '5yx6BWlEVcY',
+        playerVars: {
+            autoplay: 1,
+            loop: 1,
+            playlist: '5yx6BWlEVcY',
+            controls: 0,
+            showinfo: 0,
+            modestbranding: 1
+        },
+        events: {
+            onReady: (event) => {
+                event.target.mute(); // autoplay works only if muted first
+                event.target.playVideo();
             }
         }
+    });
+}
 
-        // Auto-unmute after user interaction (to comply with browser autoplay policies)
-        document.addEventListener('click', function() {
-            const iframe = document.getElementById('backgroundMusic');
-            if (iframe.src.includes("mute=1")) {
-                iframe.src = iframe.src.replace("mute=1", "mute=0");
-                document.getElementById('musicControl').textContent = "🔊 Pause Music";
-            }
-        }, { once: true });
+function toggleMusic() {
+    if (player.isMuted()) {
+        player.unMute();
+        document.getElementById('musicControl').innerText = '🔊 Pause Music';
+    } else {
+        player.mute();
+        document.getElementById('musicControl').innerText = '🔇 Resume Music';
+    }
+}
 });
