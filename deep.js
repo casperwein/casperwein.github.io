@@ -88,4 +88,27 @@ document.addEventListener("DOMContentLoaded", function () {
             love.remove();
         }, 3000);
     });
+
+    function toggleMusic() {
+            const iframe = document.getElementById('backgroundMusic');
+            const button = document.getElementById('musicControl');
+            
+            // Toggle between mute and unmute (since autoplay only works with mute in most browsers)
+            if (iframe.src.includes("mute=1")) {
+                iframe.src = iframe.src.replace("mute=1", "mute=0");
+                button.textContent = "🔊 Pause Music";
+            } else {
+                iframe.src = iframe.src.replace("mute=0", "mute=1");
+                button.textContent = "🔇 Play Music";
+            }
+        }
+
+        // Auto-unmute after user interaction (to comply with browser autoplay policies)
+        document.addEventListener('click', function() {
+            const iframe = document.getElementById('backgroundMusic');
+            if (iframe.src.includes("mute=1")) {
+                iframe.src = iframe.src.replace("mute=1", "mute=0");
+                document.getElementById('musicControl').textContent = "🔊 Pause Music";
+            }
+        }, { once: true });
 });
