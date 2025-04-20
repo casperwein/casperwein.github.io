@@ -22,14 +22,20 @@ function onYouTubeIframeAPIReady() {
 }
 
 function toggleMusic() {
+    const btn = document.getElementById('musicControl');
+
     if (player.isMuted()) {
         player.unMute();
-        document.getElementById('musicControl').innerText = '🔊 Pause Music';
+        btn.innerText = '⏸'; // Pause icon
+        btn.classList.add('playing'); // Tambah animasi
     } else {
         player.mute();
-        document.getElementById('musicControl').innerText = '🔇 Resume Music';
+        btn.innerText = '⏵'; // Play icon
+        btn.classList.remove('playing'); // Hapus animasi
     }
 }
+
+
 
 // --- Gallery swipe & heart animation ---
 document.addEventListener("DOMContentLoaded", function () {
