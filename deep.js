@@ -1,12 +1,13 @@
+// --- YouTube API global ---
 let player;
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-        videoId: 'wKD__Oi5H3E',
+        videoId: '5yx6BWlEVcY',
         playerVars: {
             autoplay: 1,
             loop: 1,
-            playlist: 'wKD__Oi5H3E',
+            playlist: '5yx6BWlEVcY',
             controls: 0,
             showinfo: 0,
             modestbranding: 1
@@ -25,12 +26,12 @@ function toggleMusic() {
 
     if (player.isMuted()) {
         player.unMute();
-        btn.innerText = '⏸'; // Pause icon
-        btn.classList.add('playing'); // Tambah animasi
+        btn.innerText = '⏸'; 
+        btn.classList.add('playing'); 
     } else {
         player.mute();
-        btn.innerText = '⏵'; // Play icon
-        btn.classList.remove('playing'); // Hapus animasi
+        btn.innerText = '⏵'; 
+        btn.classList.remove('playing'); 
     }
 }
 
