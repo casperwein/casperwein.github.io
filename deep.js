@@ -2,11 +2,11 @@ let player;
 
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-        videoId: 'wKD__Oi5H3E',
+        videoId: '5yx6BWlEVcY',
         playerVars: {
             autoplay: 1,
             loop: 1,
-            playlist: 'wKD__Oi5H3E',
+            playlist: '5yx6BWlEVcY',
             controls: 0,
             showinfo: 0,
             modestbranding: 1
@@ -25,16 +25,14 @@ function toggleMusic() {
 
     if (player.isMuted()) {
         player.unMute();
-        btn.innerText = '⏸'; 
+        btn.innerText = 'Play'; 
         btn.classList.add('playing'); 
     } else {
         player.mute();
-        btn.innerText = '⏵'; 
+        btn.innerText = 'Stop'; 
         btn.classList.remove('playing'); 
     }
 }
-
-
 
 // --- Gallery swipe & heart animation ---
 document.addEventListener("DOMContentLoaded", function () {
