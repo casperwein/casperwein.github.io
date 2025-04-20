@@ -1,4 +1,3 @@
-// --- YouTube API global ---
 let player;
 
 function onYouTubeIframeAPIReady() {
