@@ -1,36 +1,16 @@
-let player;
-
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        videoId: 'wKD__Oi5H3E',
-        playerVars: {
-            autoplay: 1,
-            loop: 1,
-            playlist: 'wKD__Oi5H3E',
-            controls: 0,
-            showinfo: 0,
-            modestbranding: 1
-        },
-        events: {
-            onReady: (event) => {
-                event.target.mute(); 
-                event.target.playVideo();
-            }
-        }
-    });
-}
 
 function toggleMusic() {
     const btn = document.getElementById('musicControl');
+    const bgMusic = document.getElementById('bgMusic');
 
-    if (player.isMuted()) {
-        player.unMute();
-        btn.innerText = '🎵'; 
-        btn.classList.add('playing'); 
+    if (bgMusic.paused) {
+        bgMusic.play();
+        btn.innerText = '🎵';
+        btn.classList.add('playing');
     } else {
-        player.mute();
-        btn.innerText = '🎵'; 
-        btn.classList.remove('playing'); 
+        bgMusic.pause();
+        btn.innerText = '🎶';
+        btn.classList.remove('playing');
     }
 }
 
@@ -119,3 +99,19 @@ document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => love.remove(), 2000);
     });
 });
+
+
+// function toggleMusic() {
+//     const btn = document.getElementById('musicControl');
+
+//     if (player.isMuted()) {
+//         player.unMute();
+//         btn.innerText = '🎵'; 
+//         btn.classList.add('playing'); 
+//     } else {
+//         player.mute();
+//         btn.innerText = '🎵'; 
+//         btn.classList.remove('playing'); 
+//     }
+// }
+
